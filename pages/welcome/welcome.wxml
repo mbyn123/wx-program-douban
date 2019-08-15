@@ -1,0 +1,7 @@
+<view class="section">
+  <image class="user-images" src="/images/avatar/2.png" ></image>
+  <text class="user-name" >Heelo Welcome!</text>
+  <view>
+   <text class="but" bind:tap="tapnext">开启小程序之旅</text>
+  </view>
+</view>

@@ -1,0 +1,15 @@
+<import src="../movie/movie-template.wxml" />
+<template name="movieListTemplate">
+  <view class="movie-head">
+    <text class="movie-title">{{classify}}</text>
+    <view class="link" bind:tap="movietap" data-classifytitle="{{classify}}">
+      <text class="more">更多</text>
+      <image src="/images/icon/arrow-right.png"></image>
+    </view>
+  </view>
+  <view class="movie-list">
+  <block wx:key="1" wx:for="{{movies}}" wx:for-item="item">
+    <template is="movieTemplate" data="{{...item}}"/>
+  </block >  
+  </view>
+</template>

@@ -1,0 +1,56 @@
+<!--pages/movies/movie-deatil/movie-deatil.wxml-->
+<import src="../star/star-template.wxml" />
+
+
+<view class="movie-details">
+  <image class="head-img" src="{{movies.movieimg}}" mode="aspectFill " ></image>
+  <scroll-view  class="head-hover" scroll-x="true" style="width:100%" data-src="{{movies.movieimg}}" catchtap="onMovieImg">
+    <text class="head-title">{{movies.originaltitle}}</text>
+   <view class="release-information">{{movies.countries+" · "+movies.year}}</view>
+    <view class="movie-comments">
+      <text class="count">{{movies.wishCount}}</text>
+      <text class="comments">人喜欢</text>
+      <text class="count">{{movies.comments}}</text>
+      <text class="comments">条评论</text>
+    </view >
+  </scroll-view>
+  <image class="movie-img" src="{{movies.movieimg}}" data-src="{{movies.movieimg}}" catchtap="onMovieImg"></image>
+  <text class="movie-title">{{movies.title}}</text>
+
+  <view class="film-information">
+    <view class="row">
+      <text class="font">评分</text>
+      <template is="startTemplate" data="{{stars:movies.stars,grade:movies.averge}}" />
+    </view>
+    <view class="row">
+      <text class="font">导演</text>
+      <text>{{movies.director}}</text>
+    </view>
+    <scroll-view class="row" scroll-x="true" style="width:100%">
+      <text class="font">影人</text>
+      <text>{{movies.castsname}}</text>
+    </scroll-view>
+    <view class="row">
+      <text class="font">类型</text>
+      <text>{{movies.grenres}}</text>
+    </view>
+  </view>
+
+  <view class="movie-summary">
+    <text class="title">剧情简介</text>
+    <text>{{movies.summary}}</text>
+  </view>
+
+  <view class="movie-casts">
+    <text class="movie-casts-title">影人</text>
+    <scroll-view class="movie-casts-list" scroll-x="true" style="width:100%">
+      <block wx:for="{{movies.castsimg}}" wx:for-item="item">
+        <view class="casts">
+          <image class="casts-img" src="{{item.img}}" data-src="{{item.img}}" catchtap="onMovieImg"></image>
+          <text class="casts-name">{{item.name}}</text>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+
+</view>

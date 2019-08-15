@@ -1,0 +1,25 @@
+<!--pages/posts/post-detail/post-detail.wxml-->
+
+
+<view class="container">
+  <image class="head-img" src="{{isplayMusic?music.img:content_img}}"></image>
+  <image bind:tap="onMusic" class="music-img" src="{{isplayMusic?'../../../images/music/music-stop.png':'../../../images/music/music-start.png'}}"></image>
+  <view class="author-data">
+    <image class="avater" src="{{user_img}}"></image>
+    <text class="author">{{author}}</text>
+    <text class="released-time">发布于</text>
+    <text class="released-time">{{author_time}}</text>
+  </view>
+  <text class="title">{{title}}</text>
+  
+  <view class="opearte">
+   <view class="wire"></view>
+    <view class="icon">
+      <image wx:if='{{collected}}' src="../../../images/icon/collection.png" bind:tap='onsetstorage'></image>
+      <image wx:else src="../../../images/icon/collection-anti.png" bind:tap='onsetstorage'></image>
+
+      <image src="../../../images/icon/share.png" bind:tap="onshare"></image>
+    </view>
+  </view>
+  <text class="content">{{detail_contenr}}</text>
+</view>

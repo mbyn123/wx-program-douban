@@ -1,0 +1,7 @@
+@import "../movie/movie-template.wxss";
+
+.moviesgird{
+  float: left;
+  margin: 40rpx 0 0 37rpx
+}
+

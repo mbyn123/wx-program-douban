@@ -1,0 +1,18 @@
+<!--pages/movies/movies.wxml-->
+<import src="movie-list/movieListTemplate.wxml" />
+<import src="movie-gird/movie-gird.wxml"/>
+
+<view class="search"> 
+<icon type="search" size="15"/>
+<input type="search" placeholder="头号玩家" bindblur="onSearchMovies" bindfocus="onfcors"/>
+<image src="../../images/icon/xx.png" bindtap="oncancel" wx:if="{{issearch}}" ></image>
+</view>
+<view wx:if="{{ismovies}}">
+  <template is="movieListTemplate" data="{{...intheaters}}"/>
+  <template is="movieListTemplate" data="{{...comingSoon}}"/>
+  <template is="movieListTemplate" data="{{...top250}}"/>
+</view>
+
+<view class="search-movie" wx:if="{{issearch}}">
+<template is="girdTemplate" data="{{...searchResult}}"/>
+</view>

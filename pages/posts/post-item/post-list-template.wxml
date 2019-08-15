@@ -1,0 +1,18 @@
+<template name="postitem">
+ <view class="main">
+    <!-- <text>{{idx}}</text> -->
+    <view class="released-time">
+      <image src="{{user_img}}"></image>
+      <text>{{time}}</text>
+    </view>
+    <view class="title">{{title}}</view>
+    <image class="post-img" src="{{content_img}}"></image>
+    <text class="post-content">{{content}}</text>
+    <view class="post-like">
+      <image class="post-like-img" src="/images/icon/none-star.png"></image>
+      <text class="post-like-font">{{font1}}</text>
+      <image class="post-like-img" src="/images/icon/view.png"></image>
+      <text class="post-like-font">{{font2}}</text>
+    </view>
+  </view>
+</template>
